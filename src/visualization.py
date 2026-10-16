@@ -37,7 +37,8 @@ def boxplots_by_class(df):
     classes = sorted(df[CLASS_COL].unique())
     for ax, col in zip(axes, SELECTED):
         data = [df.loc[df[CLASS_COL] == c, col] for c in classes]
-        bp = ax.boxplot(data, patch_artist=True, widths=0.6)
+        bp = ax.boxplot(data, patch_artist=True, widths=0.6,
+                        medianprops={"color": "black"})
         for patch, c in zip(bp["boxes"], classes):
             patch.set_facecolor(CLASS_COLORS[c]); patch.set_alpha(0.75)
         ax.set_xticks(range(1, len(classes) + 1), [f"Class {c}" for c in classes])
