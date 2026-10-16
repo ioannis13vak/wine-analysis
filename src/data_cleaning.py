@@ -48,6 +48,9 @@ def main():
     # 3. Missing values (original + values flagged above)
     missing = df[features].isna().sum()
     print("Missing values per variable:\n", missing[missing > 0].to_string())
+    n_imputed = int(missing.sum())
+    print(f"Values to impute: {n_imputed} "
+          f"({100 * n_imputed / df[features].size:.2f}% of all cells)")
 
     # 4. Impute with the class-wise median: robust to outliers and keeps
     #    differences between wine classes intact
