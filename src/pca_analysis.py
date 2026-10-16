@@ -22,6 +22,7 @@ CLEAN_PATH = Path("data/wine_clean.csv")
 RESULTS = Path("results")
 CLASS_COL = "class"
 N_COMPONENTS = 10
+N_LABELLED = 8  # label only the variables with the largest loadings
 CLASS_COLORS = {1: "#1f6f8b", 2: "#d1802f", 3: "#5b8c3a"}
 
 plt.rcParams.update({"axes.spines.top": False, "axes.spines.right": False,
@@ -77,7 +78,8 @@ def plot_model(key, title, pca, scores, loadings, y):
 
     # Loading plot
     axes[2].scatter(loadings["PC1"], loadings["PC2"], s=14, color="#c0392b")
-    for var, row in loadings.iterrows():
+    strength = np.hypot(loadings["PC1"], loadings["PC2"])
+    for var, row in loadings.loc[strength.nlargest(N_LABELLED).index].iterrows():
         axes[2].annotate(var, (row["PC1"], row["PC2"]), fontsize=7,
                          xytext=(3, 3), textcoords="offset points")
     axes[2].axhline(0, color="#bbbbbb", lw=0.6)
