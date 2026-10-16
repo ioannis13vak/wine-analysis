@@ -3,7 +3,7 @@
 Collaborative data-analysis practical using the wine dataset.
 
 ## Project description
-(to be completed)
+This project builds a reproducible analysis pipeline for the wine dataset.
 
 ## Contributors
 - Data cleaning: G. Vakkas
