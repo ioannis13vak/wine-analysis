@@ -3,7 +3,8 @@
 Collaborative data-analysis practical using the wine dataset.
 
 ## Project description
-Chemical analysis of 178 Italian wines from three cultivars using PCA.
+This project builds a reproducible analysis pipeline for the wine dataset:
+chemical analysis of 178 Italian wines from three cultivars using PCA.
 
 ## Contributors
 - Data cleaning: G. Vakkas
