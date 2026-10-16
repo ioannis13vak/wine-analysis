@@ -1,0 +1,4 @@
+scaling,PC1_%,PC2_%,PC1+PC2_%,silhouette_PC1_PC2,top_PC1,top_PC2
+Log10 + mean centering,47.9,20.0,67.9,0.527,"flavanoids, proanthocyanins, od280_od315","color_intensity, proline, malic_acid"
+Autoscaling,36.2,19.2,55.4,0.532,"flavanoids, total_phenols, od280_od315","color_intensity, alcohol, proline"
+Pareto scaling,93.8,3.5,97.3,0.2,"proline, magnesium, alcalinity_of_ash","magnesium, proline, alcalinity_of_ash"
